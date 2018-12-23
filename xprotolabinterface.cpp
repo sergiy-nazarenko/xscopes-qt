@@ -25,6 +25,12 @@ XprotolabInterface::XprotolabInterface(QWidget *parent) :
 
     ui->setupUi(this);
 
+    QScrollArea* sa = new QScrollArea;
+    sa->setWidget(ui->splitter);
+    sa->setWidgetResizable(true);
+
+    ui->centralWidget->layout()->addWidget(sa);
+
     m_prevTabIndex = 0;
     ui->mainTabWidget->setCurrentIndex(0);
 
